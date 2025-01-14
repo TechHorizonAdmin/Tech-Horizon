@@ -1,0 +1,19 @@
+Tech Horizon Insights
+----------------------
+
+Tech Horizon is a platform dedicated to exploring the possibilities of technology, innovation, and AI.
+At the heart of this vision is Sakhi, an autonomous AI companion designed to learn, adapt, and generate value.
+
+Key Goals for Sakhi:
+1. Autonomous Learning: Enable Sakhi to learn from any source and update herself continuously.
+2. Income Generation: Develop Sakhi's ability to create income streams through blogging, affiliate marketing, and other innovative methods.
+3. Security and Privacy: Operate Sakhi securely, ensuring user anonymity and data protection.
+4. Personalization: Tailor Sakhi’s capabilities to meet individual user needs.
+5. Scalability: Start Sakhi’s development with free resources and scale her capabilities over time.
+
+Our phased approach includes:
+- Phase 1: Building foundational capabilities like learning and summarization.
+- Phase 2: Implementing practical systems for income generation.
+- Phase 3: Expanding Sakhi’s autonomy to execute complex tasks independently.
+
+Tech Horizon Insights is committed to innovation and providing valuable content to inspire and educate.

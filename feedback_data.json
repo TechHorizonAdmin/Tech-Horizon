@@ -1,0 +1,17 @@
+[
+    {
+        "output_type": "Blog",
+        "rating": 5,
+        "comments": "Very engaging and informative!"
+    },
+    {
+        "output_type": "eBook",
+        "rating": 4,
+        "comments": "Good content but could use more visuals."
+    },
+    {
+        "output_type": "Template",
+        "rating": 3,
+        "comments": "Needs better organization and formatting."
+    }
+]

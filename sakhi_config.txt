@@ -1,0 +1,10 @@
+# Sakhi Configuration File
+
+# Learning Preferences
+learning_sources: ["text", "video", "api"]
+default_source: "text"
+
+# Decision-Making Criteria Weights
+blog_weights: [4, 5, 3]  # [Relevance, Effort, Impact]
+ebook_weights: [3, 4, 4]
+template_weights: [5, 3, 4]

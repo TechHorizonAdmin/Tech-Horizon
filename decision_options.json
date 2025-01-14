@@ -1,0 +1,24 @@
+{
+    "options": [
+        "Blog Creation",
+        "eBook Writing",
+        "Template Generation"
+    ],
+    "criteria": {
+        "Blog Creation": [
+            4,
+            5,
+            3
+        ],
+        "eBook Writing": [
+            3,
+            4,
+            4
+        ],
+        "Template Generation": [
+            5,
+            3,
+            4
+        ]
+    }
+}
