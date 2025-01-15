@@ -1,29 +1,35 @@
 import streamlit as st
-from transformers import pipeline, set_seed
+from transformers import pipeline
+import json
+from helper_functions import save_feedback, load_tasks
 
-# Load the GPT-2 model with seed for consistent responses
-set_seed(42)
-chatbot = pipeline("text-generation", model="gpt2")
+# Load Fine-Tuned Model
+model_name = "Mani0856/sakhi_fine_tuned_model"
+sakhi_chatbot = pipeline("text-generation", model=model_name, tokenizer=model_name)
 
-# Streamlit interface
+# Generate Response Function
+def generate_response(user_input):
+    prompt = f"The user is asking: {user_input}. You are an intelligent AI assistant helping them achieve their goals."
+    response = sakhi_chatbot(prompt, max_length=100, num_return_sequences=1)
+    return response[0]["generated_text"]
+
+# Streamlit App
 st.title("Sakhi: Your Intelligent AI Companion")
-st.subheader("Ask me anything!")
 
-if "memory" not in st.session_state:
-    st.session_state.memory = []
+user_input = st.text_input("Ask Sakhi a question:")
 
-user_input = st.text_input("Your Question:", key="input")
+if user_input:
+    response = generate_response(user_input)
+    st.write(f"Sakhi: {response}")
 
-if st.button("Submit"):
-    if user_input:
-        # Include session memory for better context
-        context = " ".join(st.session_state.memory[-3:])  # Keep the last 3 exchanges
-        prompt = f"{context} {user_input}"
-        try:
-            response = chatbot(prompt, max_length=50, num_return_sequences=1, pad_token_id=50256)
-            answer = response[0]["generated_text"]
-            st.session_state.memory.append(user_input)
-            st.session_state.memory.append(answer)
-            st.write(answer)
-        except Exception as e:
-            st.error(f"Error: {e}")
+    # Feedback Section
+    rating = st.radio("Rate Sakhi's Response:", [1, 2, 3, 4, 5])
+    feedback = st.text_area("Additional Feedback:")
+    if st.button("Submit Feedback"):
+        save_feedback(user_input, response, rating, feedback)
+        st.success("Thank you for your feedback!")
+
+# Display Task Schedule
+st.header("Task Schedule")
+tasks = load_tasks("tasks_data.json")
+st.write(tasks)
