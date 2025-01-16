@@ -1,0 +1,4 @@
+from transformers import GPT2LMHeadModel
+
+model = GPT2LMHeadModel.from_pretrained("./sakhi_fine_tuned_model", torch_dtype=torch.float32)
+model.save_pretrained("./sakhi_fine_tuned_model")
